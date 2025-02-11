@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/nithish/ROS/navigation_ws/install/navigation_msgs/local/lib/python3.10/dist-packages",
+        "/home/nithish/ROS/navigation_ws/install/navigation_controller/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/nithish/ROS/navigation_ws/install/navigation_msgs/local/lib/python3.10/dist-packages",
+        "/home/nithish/ROS/navigation_ws/install/navigation_controller/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
