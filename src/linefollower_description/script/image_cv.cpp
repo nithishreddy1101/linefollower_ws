@@ -20,6 +20,7 @@ public:
 private:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr image_sub_;
     rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr twist_pub_;
+    geometry_msgs::msg::TwistStamped twist_msg_ ;
     void cameraCallback(const sensor_msgs::msg::Image &image){
          try
         {
@@ -48,9 +49,22 @@ private:
                     int cx = static_cast<int>(M.m10 / M.m00);
                     int deviation = cx - (width / 2);
                     RCLCPP_INFO(this->get_logger(), "Deviation: %d", deviation);
+                    if (deviation < -100){
+                        twist_msg_.twist.angular.z= 0.5;
+                    }else if (deviation >100){
+                        twist_msg_.twist.angular.z= -0.5; 
+                    }else{
+                        twist_msg_.twist.linear.x=0.1; 
+                    }
+                }else{
+                    twist_msg_.twist.linear.x= 0.0; 
+                    twist_msg_.twist.angular.z= 0.0;
                 }
+            }else{
+                twist_msg_.twist.linear.x= 0.0; 
+                twist_msg_.twist.angular.z= 0.0;
             }
-
+            twist_pub_->publish(twist_msg_);
             cv::imshow("Camera Feed", cv_ptr->image);
             cv::waitKey(1);
         }
