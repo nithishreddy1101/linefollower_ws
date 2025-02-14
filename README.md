@@ -59,6 +59,6 @@ Contributions are welcome! Feel free to:
    ```sh
    git commit -m "Added new feature"
    ```
-4. **Push** to GitHub and open a **Pull Request**
 
----
+
+[![Watch the video]](https://youtu.be/6gsMs2E0sfw)
