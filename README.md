@@ -1,6 +1,6 @@
 # **Line Follower Robot using ROS 2 and OpenCV** 🏎️🤖  
 
-![Project Banner](https://user-images.githubusercontent.com/your_image_link) *(optional: add an image/gif of your robot in action!)*  
+![Project Banner](https://user-images.githubusercontent.com/your_image_link)   
 
 ## **📌 Project Description**
 This project is a **line-following robot** that uses a **camera** to detect and follow a path using **ROS 2, OpenCV, and cv_bridge**. It processes live camera feed, detects the track, and adjusts the robot’s movement accordingly.
@@ -36,7 +36,7 @@ source install/setup.bash
 ### **3️⃣ Run the Line Follower Node**
 Launch the camera node and the line follower:
 ```sh
-ros2 run line_follower line_follower_node
+ros2 run line_follower image_cv.py
 ```
 
 
